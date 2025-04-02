@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a3093 0%, #a044ff 100%);
+    animation: slideIn 1s ease-out forwards;
+    transform: translateY(20px);
+    opacity: 0;
+}
+  /* Fondo con imagen */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #6a3093;
+    background-image: url('img/Fondo\ Body.png');
+    background-size: 100% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: brightness(0.5); /* Oscurecer la imagen para mejor legibilidad */
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header {
+    background: rgba(255, 255, 0, 0.9);
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: 900;
+    width: 100%;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 0, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.logo-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 50px;
+}
+
+.login-form {
+    padding: 30px;
+}
+
+h2 {
+    color: #6a3093;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ffc107;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+}
+
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6a3093;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.forgot-password a {
+    color: #6a3093;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #ffc107, #ffab00);
+    border: none;
+    border-radius: 8px;
+    color: #6a3093;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.login-button:hover {
+    background: linear-gradient(to right, #ffab00, #ff9800);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+.register-link {
+    text-align: center;
+    color: #555;
+}
+
+.register-link a {
+    color: #6a3093;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+a {
+color: #000000;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+footer {
+    background-color: rgba(255, 255, 0, 0.9);
+    color: #000;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    max-width: 100px;
+    margin-right: 20px;
+    border-radius: 100%;
+}
+
+.footer-info, .footer-links {
+    text-align: left;
+    line-height: 2.0;
+
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    border-top: 1px solid #000;
+    padding-top: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+[logo-animated] {
+    display: inline-block;
+    perspective: 1000px;
+}
+
+[logo-animated] img.footer-logo {
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[logo-animated] img.footer-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    filter: brightness(1.05);
+}
+
+.titulo {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0;
+}
+
+.header .logo {
+    font-size: 28px;
+    color: #4a148c;
+    font-weight: bold;
+}
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #4a148c;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #000000;
+    transform: translateY(-2px)
+}
+
+.nav a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.nav .btn-cart {
+    background: #4a148c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    font-size: 20px;
+}
+
+.nav .btn-cart:hover {
+    background: rgb(0, 0, 0);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav a {
+        margin: 5px 10px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-info, .footer-links {
+        text-align: center;
+        margin: 15px 0;
+    }
+}
